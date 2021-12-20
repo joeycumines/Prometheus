@@ -344,7 +344,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "Pod数",
+          "legendFormat": "Number of pods",
           "refId": "B"
         },
         {
@@ -1405,7 +1405,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "pod数",
+          "legendFormat": "Number of pods",
           "refId": "A"
         },
         {
@@ -1779,7 +1779,7 @@
       "seriesOverrides": [
         {
           "$$hashKey": "object:2068",
-          "alias": "/Total number of audits.*/",
+          "alias": "/Total number of cores.*/",
           "color": "#C4162A"
         }
       ],
