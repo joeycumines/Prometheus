@@ -61,7 +61,7 @@
       }
     ]
   },
-  "description": "【中文版本】2021.10.10更新，kubernetes资源全面展示！包含K8S整体资源总览、微服务资源明细、Pod资源明细及K8S网络带宽，优化重要指标展示。https://github.com/starsliao/Prometheus",
+  "description": "[English version] Updated on October 10, 2021, with a comprehensive display of K8S resources! It includes an overview of K8S overall resources, microservice resource details, Pod resource details, and K8S network bandwidth to optimize the display of important indicators. https://github.com/starsliao/Prometheus",
   "editable": true,
   "gnetId": 13105,
   "graphTooltip": 0,
@@ -73,7 +73,7 @@
       "tags": [],
       "targetBlank": true,
       "title": "Update",
-      "tooltip": "更新当前仪表板",
+      "tooltip": "Update the current dashboard",
       "type": "link",
       "url": "https://grafana.com/dashboards/13105"
     },
@@ -85,7 +85,7 @@
       ],
       "targetBlank": true,
       "title": "GitHub",
-      "tooltip": "查看更多仪表板",
+      "tooltip": "View more dashboards",
       "type": "link",
       "url": "https://github.com/starsliao/Prometheus"
     },
@@ -110,7 +110,7 @@
       },
       "id": 54,
       "panels": [],
-      "title": "节点资源总览：所选节点:【$Node】",
+      "title": "Node resource overview: Selected node: 【$Node】",
       "type": "row"
     },
     {
@@ -172,7 +172,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "内存使用率",
+          "legendFormat": "Memory usage",
           "refId": "C"
         },
         {
@@ -181,7 +181,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "内存请求率",
+          "legendFormat": "Memory request rate",
           "refId": "A"
         },
         {
@@ -191,12 +191,12 @@
           "instant": true,
           "interval": "10s",
           "intervalFactor": 1,
-          "legendFormat": "内存限制率",
+          "legendFormat": "Limit rate",
           "refId": "B",
           "step": 10
         }
       ],
-      "title": "节点内存比例",
+      "title": "Node memory ratio",
       "type": "bargauge"
     },
     {
@@ -258,7 +258,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "CPU使用率",
+          "legendFormat": "CPU usage",
           "refId": "C"
         },
         {
@@ -266,7 +266,7 @@
           "expr": "sum(kube_pod_container_resource_requests{origin_prometheus=~\"$origin_prometheus\",resource=\"cpu\", unit=\"core\",node=~\"^$Node$\"}) / sum(kube_node_status_allocatable{origin_prometheus=~\"$origin_prometheus\",resource=\"cpu\", unit=\"core\", node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "CPU请求率",
+          "legendFormat": "CPU request rate",
           "refId": "A"
         },
         {
@@ -274,16 +274,16 @@
           "expr": "sum(kube_pod_container_resource_limits{origin_prometheus=~\"$origin_prometheus\",resource=\"cpu\", unit=\"core\",node=~\"^$Node$\"}) / sum(kube_node_status_allocatable{origin_prometheus=~\"$origin_prometheus\",resource=\"cpu\", unit=\"core\", node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "CPU限制率",
+          "legendFormat": "CPU limit rate",
           "refId": "B"
         }
       ],
-      "title": "节点CPU比例",
+      "title": "Node CPU ratio",
       "type": "bargauge"
     },
     {
       "datasource": "${DS__VICTORIAMETRICS}",
-      "description": "集群节点数，节点POD数，节点POD上限",
+      "description": "The number of cluster nodes, the number of node pods, and the upper limit of node pods",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -336,7 +336,7 @@
           "expr": "count(kube_node_info{origin_prometheus=~\"$origin_prometheus\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "节点数",
+          "legendFormat": "Number of nodes",
           "refId": "A"
         },
         {
@@ -359,7 +359,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "节点与Pod",
+      "title": "Nodes and Pods",
       "type": "bargauge"
     },
     {
@@ -391,7 +391,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "空间"
+              "options": "space"
             },
             "properties": [
               {
@@ -427,7 +427,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "微服务"
+              "options": "Microservices"
             },
             "properties": [
               {
@@ -439,7 +439,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "配置"
+              "options": "Placement"
             },
             "properties": [
               {
@@ -451,7 +451,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "密码"
+              "options": "password"
             },
             "properties": [
               {
@@ -474,7 +474,7 @@
         "sortBy": [
           {
             "desc": true,
-            "displayName": "空间"
+            "displayName": "space"
           }
         ]
       },
@@ -527,7 +527,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "命名空间",
+      "title": "Namespaces",
       "transformations": [
         {
           "id": "seriesToColumns",
@@ -558,11 +558,11 @@
               "Time 1": "",
               "Time 2": "",
               "Value #A": "Pod",
-              "Value #B": "配置",
+              "Value #B": "Placement",
               "Value #C": "SVC",
-              "Value #D": "微服务",
-              "Value #E": "密码",
-              "namespace": "空间"
+              "Value #D": "Microservices",
+              "Value #E": "password",
+              "namespace": "space"
             }
           }
         }
@@ -634,7 +634,7 @@
           "format": "time_series",
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "接收",
+          "legendFormat": "Receive",
           "metric": "network",
           "refId": "A",
           "step": 10
@@ -645,7 +645,7 @@
           "instant": false,
           "interval": "",
           "intervalFactor": 1,
-          "legendFormat": "发送",
+          "legendFormat": "send",
           "metric": "network",
           "refId": "B",
           "step": 10
@@ -655,7 +655,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "$NameSpace：网络总览（关联节点与命名空间）",
+      "title": "$NameSpace: Network overview (associated nodes and namespaces)",
       "tooltip": {
         "msResolution": false,
         "shared": true,
@@ -751,7 +751,7 @@
           "expr": "sum(kube_node_status_allocatable{origin_prometheus=~\"$origin_prometheus\",resource=\"memory\", unit=\"byte\", node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "总内存",
+          "legendFormat": "Total memory",
           "refId": "A"
         },
         {
@@ -759,7 +759,7 @@
           "expr": "sum (container_memory_working_set_bytes{origin_prometheus=~\"$origin_prometheus\",container!=\"\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "使用量",
+          "legendFormat": "Usage",
           "refId": "C"
         },
         {
@@ -767,7 +767,7 @@
           "expr": "sum(kube_pod_container_resource_requests{origin_prometheus=~\"$origin_prometheus\",resource=\"memory\", unit=\"byte\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "请求量",
+          "legendFormat": "Request volume",
           "refId": "D"
         },
         {
@@ -775,13 +775,13 @@
           "expr": "sum(kube_pod_container_resource_limits{origin_prometheus=~\"$origin_prometheus\",resource=\"memory\", unit=\"byte\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "限制量",
+          "legendFormat": "Restricted amount",
           "refId": "B"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "节点内存信息",
+      "title": "Node memory information",
       "type": "bargauge"
     },
     {
@@ -840,7 +840,7 @@
           "expr": "sum(kube_node_status_allocatable{origin_prometheus=~\"$origin_prometheus\",resource=\"cpu\", unit=\"core\", node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "总核数",
+          "legendFormat": "Total number of cores",
           "refId": "A"
         },
         {
@@ -848,7 +848,7 @@
           "expr": "sum (irate(container_cpu_usage_seconds_total{origin_prometheus=~\"$origin_prometheus\",id=\"/\",node=~\"^$Node$\"}[2m]))",
           "instant": true,
           "interval": "",
-          "legendFormat": "使用量",
+          "legendFormat": "Usage",
           "refId": "C"
         },
         {
@@ -856,7 +856,7 @@
           "expr": "sum(kube_pod_container_resource_requests{origin_prometheus=~\"$origin_prometheus\",resource=\"cpu\", unit=\"core\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "请求量",
+          "legendFormat": "Request volume",
           "refId": "D"
         },
         {
@@ -864,13 +864,13 @@
           "expr": "sum(kube_pod_container_resource_limits{origin_prometheus=~\"$origin_prometheus\",resource=\"cpu\", unit=\"core\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "限制量",
+          "legendFormat": "Restricted amount",
           "refId": "B"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "节点CPU核数",
+      "title": "Number of CPU cores of nodes",
       "type": "bargauge"
     },
     {
@@ -904,7 +904,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "使用率"
+              "options": "Usage rate"
             },
             "properties": [
               {
@@ -969,27 +969,27 @@
           "expr": "sum (container_fs_usage_bytes{origin_prometheus=~\"$origin_prometheus\",device=~\"^/dev/.*$\",id=\"/\",node=~\"^$Node$\"}) / sum (container_fs_limit_bytes{origin_prometheus=~\"$origin_prometheus\",device=~\"^/dev/.*$\",id=\"/\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "使用率",
+          "legendFormat": "Usage rate",
           "refId": "C"
         },
         {
           "expr": "sum (container_fs_usage_bytes{origin_prometheus=~\"$origin_prometheus\",device=~\"^/dev/.*$\",id=\"/\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "使用量",
+          "legendFormat": "Usage",
           "refId": "A"
         },
         {
           "expr": "sum (container_fs_limit_bytes{origin_prometheus=~\"$origin_prometheus\",device=~\"^/dev/.*$\",id=\"/\",node=~\"^$Node$\"})",
           "instant": true,
           "interval": "",
-          "legendFormat": "总量",
+          "legendFormat": "Total",
           "refId": "B"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "节点存储信息",
+      "title": "Node storage information",
       "type": "bargauge"
     },
     {
@@ -1035,7 +1035,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "状态"
+              "options": "status"
             },
             "properties": [
               {
@@ -1047,7 +1047,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "CPU使用(核)"
+              "options": "CPU usage (core)"
             },
             "properties": [
               {
@@ -1059,7 +1059,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "CPU总"
+              "options": "Total CPU"
             },
             "properties": [
               {
@@ -1083,7 +1083,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存使用"
+              "options": "Use of memory"
             },
             "properties": [
               {
@@ -1095,7 +1095,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存总"
+              "options": "Total memory"
             },
             "properties": [
               {
@@ -1107,7 +1107,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存限制"
+              "options": "Memory limit"
             },
             "properties": [
               {
@@ -1119,7 +1119,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "磁盘使用"
+              "options": "Disk usage"
             },
             "properties": [
               {
@@ -1131,7 +1131,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "磁盘总"
+              "options": "Total disk"
             },
             "properties": [
               {
@@ -1143,7 +1143,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存%"
+              "options": "Memory%"
             },
             "properties": [
               {
@@ -1155,7 +1155,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存请求%"
+              "options": "Memory request%"
             },
             "properties": [
               {
@@ -1167,7 +1167,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存限制%"
+              "options": "Memory limit%"
             },
             "properties": [
               {
@@ -1179,7 +1179,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "CPU使用%"
+              "options": "CPU usage%"
             },
             "properties": [
               {
@@ -1191,7 +1191,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "CPU请求%"
+              "options": "CPU request%"
             },
             "properties": [
               {
@@ -1215,7 +1215,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "磁盘使用%"
+              "options": "Disk usage%"
             },
             "properties": [
               {
@@ -1263,7 +1263,7 @@
           {
             "matcher": {
               "id": "byRegexp",
-              "options": "(内存使用|内存总|内存请求|内存限制|磁盘使用|磁盘总)"
+              "options": "(Memory usage|total memory|memory request|memory limit|disk usage|total disk)"
             },
             "properties": [
               {
@@ -1279,7 +1279,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "节点"
+              "options": "node"
             },
             "properties": [
               {
@@ -1291,7 +1291,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存使用%"
+              "options": "Use of memory%"
             },
             "properties": [
               {
@@ -1303,7 +1303,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "内存请求"
+              "options": "Memory request"
             },
             "properties": [
               {
@@ -1315,7 +1315,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "CPU请求"
+              "options": "CPU request"
             },
             "properties": [
               {
@@ -1327,7 +1327,7 @@
           {
             "matcher": {
               "id": "byRegexp",
-              "options": "(CPU总|内存总|磁盘总|Pod上限)"
+              "options": "(Total CPU|total memory|total disk/Pod upper limit)"
             },
             "properties": [
               {
@@ -1363,7 +1363,7 @@
           {
             "matcher": {
               "id": "byRegexp",
-              "options": "CPU使用\\(核\\)$|内存使用$|磁盘使用$"
+              "options": "CPU usage \\(core\\)$|Memory usage$|disk usage$"
             },
             "properties": [
               {
@@ -1393,7 +1393,7 @@
         "sortBy": [
           {
             "desc": true,
-            "displayName": "磁盘使用%"
+            "displayName": "Disk usage%"
           }
         ]
       },
@@ -1414,7 +1414,7 @@
           "format": "table",
           "instant": true,
           "interval": "",
-          "legendFormat": "状态",
+          "legendFormat": "status",
           "refId": "B"
         },
         {
@@ -1523,7 +1523,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "内存使用%",
+          "legendFormat": "Use of memory%",
           "refId": "M"
         },
         {
@@ -1533,7 +1533,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "内存请求%",
+          "legendFormat": "Memory request%",
           "refId": "N"
         },
         {
@@ -1543,7 +1543,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "内存限制%",
+          "legendFormat": "Memory limit%",
           "refId": "O"
         },
         {
@@ -1553,7 +1553,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "CPU使用%",
+          "legendFormat": "CPU usage%",
           "refId": "P"
         },
         {
@@ -1563,7 +1563,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "CPU请求%",
+          "legendFormat": "CPU request%",
           "refId": "Q"
         },
         {
@@ -1573,7 +1573,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "内存限制%",
+          "legendFormat": "Memory limit%",
           "refId": "R"
         },
         {
@@ -1582,7 +1582,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "磁盘使用%",
+          "legendFormat": "Disk usage%",
           "refId": "S"
         },
         {
@@ -1598,7 +1598,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "$Node：节点信息明细",
+      "title": "$Node: Node information details",
       "transformations": [
         {
           "id": "merge",
@@ -1704,26 +1704,26 @@
             },
             "renameByName": {
               "Value #A": "Pod",
-              "Value #C": "CPU总",
-              "Value #D": "内存总",
-              "Value #E": "CPU请求",
+              "Value #C": "Total CPU",
+              "Value #D": "Total memory",
+              "Value #E": "CPU request",
               "Value #F": "CPU限制",
-              "Value #G": "内存请求",
-              "Value #H": "内存限制",
-              "Value #I": "CPU使用(核)",
-              "Value #J": "内存使用",
-              "Value #K": "磁盘使用",
-              "Value #L": "磁盘总",
-              "Value #M": "内存使用%",
-              "Value #N": "内存请求%",
-              "Value #O": "内存限制%",
-              "Value #P": "CPU使用%",
-              "Value #Q": "CPU请求%",
+              "Value #G": "Memory request",
+              "Value #H": "Memory limit",
+              "Value #I": "CPU usage (core)",
+              "Value #J": "Use of memory",
+              "Value #K": "Disk usage",
+              "Value #L": "Total disk",
+              "Value #M": "Use of memory%",
+              "Value #N": "Memory request%",
+              "Value #O": "Memory limit%",
+              "Value #P": "CPU usage%",
+              "Value #Q": "CPU request%",
               "Value #R": "CPU限制%",
-              "Value #S": "磁盘使用%",
+              "Value #S": "Disk usage%",
               "Value #T": "Pod上限",
-              "condition": "状态",
-              "node": "节点"
+              "condition": "status",
+              "node": "node"
             }
           }
         },
@@ -1779,7 +1779,7 @@
       "seriesOverrides": [
         {
           "$$hashKey": "object:2068",
-          "alias": "/总核数.*/",
+          "alias": "/Total number of audits.*/",
           "color": "#C4162A"
         }
       ],
@@ -1906,7 +1906,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "$Node：节点内存明细",
+      "title": "$Node: Node memory details",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -2030,7 +2030,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "$Node：节点网络总览",
+      "title": "$Node: Node Network Overview",
       "tooltip": {
         "msResolution": false,
         "shared": true,
@@ -2134,7 +2134,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "总内存.*"
+                  "options": "Total memory.*"
                 },
                 "properties": [
                   {
@@ -2146,7 +2146,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "总磁盘使用"
+                  "options": "Total disk usage"
                 },
                 "properties": [
                   {
@@ -2186,7 +2186,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": ".*限制"
+                  "options": ".*Restrictions"
                 },
                 "properties": [
                   {
@@ -2205,7 +2205,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "总CPU限制"
+                  "options": "Total CPU limit"
                 },
                 "properties": [
                   {
@@ -2217,7 +2217,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "总内存限制"
+                  "options": "Total memory limit"
                 },
                 "properties": [
                   {
@@ -2229,7 +2229,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "总内存使用(RSS) "
+                  "options": "Total memory usage (RSS) "
                 },
                 "properties": [
                   {
@@ -2241,7 +2241,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "总内存需求"
+                  "options": "Total memory requirements"
                 },
                 "properties": [
                   {
@@ -2253,7 +2253,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "容器数"
+                  "options": "Number of containers"
                 },
                 "properties": [
                   {
@@ -2297,7 +2297,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "整体CPU%(最大100%)"
+                  "options": "Overall CPU% (maximum 100%)"
                 },
                 "properties": [
                   {
@@ -2309,7 +2309,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "整体核数使用"
+                  "options": "Overall audit use"
                 },
                 "properties": [
                   {
@@ -2321,7 +2321,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "总CPU需求"
+                  "options": "Total CPU requirements"
                 },
                 "properties": [
                   {
@@ -2333,7 +2333,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "平均内存%(WSS)"
+                  "options": "Average memory% (WSS)"
                 },
                 "properties": [
                   {
@@ -2345,7 +2345,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "总内存使用(WSS)"
+                  "options": "Total memory usage (WSS)"
                 },
                 "properties": [
                   {
@@ -2357,7 +2357,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "命名空间"
+                  "options": "Namespaces"
                 },
                 "properties": [
                   {
@@ -2369,7 +2369,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "整体核数使用$|总内存使用\\(WSS\\)$|总内存使用\\(RSS\\) $"
+                  "options": "Overall audit usage$|Total memory usage\\(WSS\\)$|Total Memory usage\\(RSS\\) $"
                 },
                 "properties": [
                   {
@@ -2388,7 +2388,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "容器名"
+                  "options": "Container name"
                 },
                 "properties": [
                   {
@@ -2411,7 +2411,7 @@
             "sortBy": [
               {
                 "desc": true,
-                "displayName": "容器名"
+                "displayName": "Container name"
               }
             ]
           },
@@ -2434,7 +2434,7 @@
               "hide": false,
               "instant": true,
               "interval": "",
-              "legendFormat": "整体核数使用",
+              "legendFormat": "Overall audit use",
               "refId": "L"
             },
             {
@@ -2489,7 +2489,7 @@
               "hide": false,
               "instant": true,
               "interval": "",
-              "legendFormat": "总内存使用(RSS) ",
+              "legendFormat": "Total memory usage (RSS) ",
               "refId": "K"
             },
             {
@@ -2532,7 +2532,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "微服务(容器名)资源统计",
+          "title": "Microservice (container name) resource statistics",
           "transformations": [
             {
               "id": "merge",
@@ -2586,20 +2586,20 @@
                 },
                 "renameByName": {
                   "Time 1": "",
-                  "Value #A": "整体CPU%(最大100%)",
-                  "Value #B": "总CPU需求",
-                  "Value #C": "总CPU限制",
-                  "Value #D": "总内存使用(WSS)",
-                  "Value #E": "总内存需求",
-                  "Value #F": "总内存限制",
-                  "Value #G": "容器数",
+                  "Value #A": "Overall CPU% (maximum 100%)",
+                  "Value #B": "Total CPU requirements",
+                  "Value #C": "Total CPU limit",
+                  "Value #D": "Total memory usage (WSS)",
+                  "Value #E": "Total memory requirements",
+                  "Value #F": "Total memory limit",
+                  "Value #G": "Number of containers",
                   "Value #H": "平均内存%(RSS)",
-                  "Value #I": "平均内存%(WSS)",
-                  "Value #J": "总磁盘使用",
-                  "Value #K": "总内存使用(RSS) ",
-                  "Value #L": "整体核数使用",
-                  "container": "容器名",
-                  "namespace": "命名空间"
+                  "Value #I": "Average memory% (WSS)",
+                  "Value #J": "Total disk usage",
+                  "Value #K": "Total memory usage (RSS) ",
+                  "Value #L": "Overall audit use",
+                  "container": "Container name",
+                  "namespace": "Namespaces"
                 }
               }
             },
@@ -2687,7 +2687,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "微服务(容器名)整体CPU使用率(最大100%)",
+          "title": "Microservice (container name) overall CPU usage (maximum 100%)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
@@ -2808,7 +2808,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "微服务(容器名)整体内存使用率",
+          "title": "Microservice (container name) overall memory usage",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -2955,7 +2955,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "微服务(容器名)每秒网络带宽 (可关联节点)",
+          "title": "Microservice (container name) network bandwidth per second (can associate nodes)",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -2996,7 +2996,7 @@
           }
         }
       ],
-      "title": "微服务(容器名)资源总览：所选微服务:【$Container】",
+      "title": "Microservice (container name) Resource overview: Selected microservice: 【$Container】",
       "type": "row"
     },
     {
@@ -3059,7 +3059,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "命名空间"
+                  "options": "Namespaces"
                 },
                 "properties": [
                   {
@@ -3083,7 +3083,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "使用核数"
+                  "options": "Number of cores used"
                 },
                 "properties": [
                   {
@@ -3095,7 +3095,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "CPU需求"
+                  "options": "CPU requirements"
                 },
                 "properties": [
                   {
@@ -3167,7 +3167,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "内存需求"
+                  "options": "Memory requirements"
                 },
                 "properties": [
                   {
@@ -3179,7 +3179,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "内存限制"
+                  "options": "Memory limit"
                 },
                 "properties": [
                   {
@@ -3191,7 +3191,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "重启"
+                  "options": "restart"
                 },
                 "properties": [
                   {
@@ -3227,7 +3227,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "磁盘"
+                  "options": "disk"
                 },
                 "properties": [
                   {
@@ -3295,7 +3295,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": ".*限制"
+                  "options": ".*Restrictions"
                 },
                 "properties": [
                   {
@@ -3314,7 +3314,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "节点"
+                  "options": "node"
                 },
                 "properties": [
                   {
@@ -3345,7 +3345,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "容器名"
+                  "options": "Container name"
                 },
                 "properties": [
                   {
@@ -3386,7 +3386,7 @@
               "hide": false,
               "instant": true,
               "interval": "",
-              "legendFormat": "CPU核数使用",
+              "legendFormat": "CPU core usage",
               "refId": "Q"
             },
             {
@@ -3528,7 +3528,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "$Node：Pod资源明细(可关联节点)",
+          "title": "$Node: Details of Pod resources (nodes can be associated)",
           "transformations": [
             {
               "id": "merge",
@@ -3648,24 +3648,24 @@
                 },
                 "renameByName": {
                   "Value #A": "CPU%(最大100%)",
-                  "Value #B": "CPU需求",
+                  "Value #B": "CPU requirements",
                   "Value #C": "CPU限制",
                   "Value #D": "WSS",
-                  "Value #E": "内存需求",
-                  "Value #F": "内存限制",
-                  "Value #H": "重启",
+                  "Value #E": "Memory requirements",
+                  "Value #F": "Memory limit",
+                  "Value #H": "restart",
                   "Value #I": "WSS%",
-                  "Value #J": "磁盘",
+                  "Value #J": "disk",
                   "Value #K": "RSS",
                   "Value #L": "RSS%",
-                  "Value #Q": "使用核数",
-                  "container": "容器名",
-                  "namespace": "命名空间",
+                  "Value #Q": "Number of cores used",
+                  "container": "Container name",
+                  "namespace": "Namespaces",
                   "namespace 1": "",
-                  "namespace 12": "命名空间",
-                  "node": "节点",
+                  "namespace 12": "Namespaces",
+                  "node": "node",
                   "node 1": "",
-                  "node 11": "节点",
+                  "node 11": "node",
                   "pod": "Pod名称",
                   "priority_class": ""
                 }
@@ -3676,22 +3676,22 @@
               "options": {
                 "include": {
                   "names": [
-                    "节点",
-                    "命名空间",
+                    "node",
+                    "Namespaces",
                     "Pod名称",
                     "CPU%(最大100%)",
-                    "使用核数",
-                    "CPU需求",
+                    "Number of cores used",
+                    "CPU requirements",
                     "CPU限制",
                     "WSS%",
                     "WSS",
                     "RSS%",
                     "RSS",
-                    "内存需求",
-                    "内存限制",
-                    "磁盘",
-                    "重启",
-                    "容器名"
+                    "Memory requirements",
+                    "Memory limit",
+                    "disk",
+                    "restart",
+                    "Container name"
                   ]
                 }
               }
@@ -3777,7 +3777,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Pod容器CPU使用率(最大100%可关联节点)",
+          "title": "Pod container CPU usage (up to 100% can be associated with nodes)",
           "tooltip": {
             "msResolution": true,
             "shared": true,
@@ -3911,7 +3911,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Pod容器内存使用率(可关联节点)",
+          "title": "Pod container memory usage (can associate nodes)",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -4028,7 +4028,7 @@
               "expr": "sum(sum(irate(container_network_transmit_bytes_total{origin_prometheus=~\"$origin_prometheus\",pod=~\"$Pod\",image!=\"\",name=~\"^k8s_.*\",node=~\"^$Node$\",namespace=~\"$NameSpace\",pod=~\".*$Container.*\"}[2m])) by (pod)* on(pod) group_right kube_pod_container_info) by(pod) *8",
               "interval": "",
               "intervalFactor": 1,
-              "legendFormat": "流出:{{ pod}}",
+              "legendFormat": "Outflow: {{ pod }}",
               "metric": "network",
               "refId": "B",
               "step": 10
@@ -4058,7 +4058,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "Pod每秒网络带宽 (可关联节点)",
+          "title": "Pod network bandwidth per second (can associate nodes)",
           "tooltip": {
             "msResolution": false,
             "shared": true,
@@ -4099,7 +4099,7 @@
           }
         }
       ],
-      "title": "Pod资源总览：所选Pod:【$Pod】",
+      "title": "Pod resource overview: Selected Pod: 【$Pod】",
       "type": "row"
     }
   ],
@@ -4149,7 +4149,7 @@
         "error": null,
         "hide": 0,
         "includeAll": true,
-        "label": "节点",
+        "label": "node",
         "multi": false,
         "name": "Node",
         "options": [],
@@ -4176,7 +4176,7 @@
         "error": null,
         "hide": 0,
         "includeAll": true,
-        "label": "命名空间",
+        "label": "Namespaces",
         "multi": false,
         "name": "NameSpace",
         "options": [],
@@ -4203,7 +4203,7 @@
         "error": null,
         "hide": 0,
         "includeAll": true,
-        "label": "微服务(容器名)",
+        "label": "Microservice (container name)",
         "multi": false,
         "name": "Container",
         "options": [],

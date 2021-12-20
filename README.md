@@ -1,3 +1,11 @@
+## Maintainer notes
+
+I've forked this repository in the process of translating the Kubernetes dashboard, from Chinese to English, for my own
+use. I did some manual fixing, but I just used https://github.com/joeycumines/translate-json to do the actual
+translation.
+
+---
+
 # Prometheus
 ### [1 Kubernetes for Prometheus Dashboard](https://github.com/starsliao/Prometheus/tree/master/kubernetes)
 ### [2 Node Exporter for Prometheus Dashboard](https://github.com/starsliao/Prometheus/tree/master/node_exporter)
