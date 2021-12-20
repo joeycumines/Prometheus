@@ -353,7 +353,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "上限Pod",
+          "legendFormat": "Pod upper limit",
           "refId": "C"
         }
       ],
@@ -1071,7 +1071,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "CPU限制"
+              "options": "CPU limit"
             },
             "properties": [
               {
@@ -1083,7 +1083,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Use of memory"
+              "options": "Memory usage"
             },
             "properties": [
               {
@@ -1203,7 +1203,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "CPU限制%"
+              "options": "CPU limit%"
             },
             "properties": [
               {
@@ -1263,7 +1263,7 @@
           {
             "matcher": {
               "id": "byRegexp",
-              "options": "(Memory usage|total memory|memory request|memory limit|disk usage|total disk)"
+              "options": "([mM]emory usage|[tT]otal memory|[mM]emory request|[mM]emory limit|[dD]isk usage|[tT]otal disk)"
             },
             "properties": [
               {
@@ -1291,7 +1291,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Use of memory%"
+              "options": "Memory usage%"
             },
             "properties": [
               {
@@ -1327,7 +1327,7 @@
           {
             "matcher": {
               "id": "byRegexp",
-              "options": "(Total CPU|total memory|total disk/Pod upper limit)"
+              "options": "([tT]otal CPU|[tT]otal memory|[tT]otal disk|[pP]od upper limit)"
             },
             "properties": [
               {
@@ -1351,7 +1351,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "Pod上限"
+              "options": "Pod upper limit"
             },
             "properties": [
               {
@@ -1363,7 +1363,7 @@
           {
             "matcher": {
               "id": "byRegexp",
-              "options": "CPU usage \\(core\\)$|Memory usage$|disk usage$"
+              "options": "CPU usage \\(core\\)$|[mM]emory usage$|[dD]isk usage$"
             },
             "properties": [
               {
@@ -1523,7 +1523,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "Use of memory%",
+          "legendFormat": "Memory usage%",
           "refId": "M"
         },
         {
@@ -1592,7 +1592,7 @@
           "hide": false,
           "instant": true,
           "interval": "",
-          "legendFormat": "Pod上限",
+          "legendFormat": "Pod upper limit",
           "refId": "T"
         }
       ],
@@ -1707,21 +1707,21 @@
               "Value #C": "Total CPU",
               "Value #D": "Total memory",
               "Value #E": "CPU request",
-              "Value #F": "CPU限制",
+              "Value #F": "CPU limit",
               "Value #G": "Memory request",
               "Value #H": "Memory limit",
               "Value #I": "CPU usage (core)",
-              "Value #J": "Use of memory",
+              "Value #J": "Memory usage",
               "Value #K": "Disk usage",
               "Value #L": "Total disk",
-              "Value #M": "Use of memory%",
+              "Value #M": "Memory usage%",
               "Value #N": "Memory request%",
               "Value #O": "Memory limit%",
               "Value #P": "CPU usage%",
               "Value #Q": "CPU request%",
-              "Value #R": "CPU限制%",
+              "Value #R": "CPU limit%",
               "Value #S": "Disk usage%",
-              "Value #T": "Pod上限",
+              "Value #T": "Pod upper limit",
               "condition": "status",
               "node": "node"
             }
@@ -1802,7 +1802,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "$Node：节点CPU明细",
+      "title": "$Node：Node CPU details",
       "tooltip": {
         "shared": true,
         "sort": 2,
@@ -2134,7 +2134,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "Total memory.*"
+                  "options": "[tT]otal memory.*"
                 },
                 "properties": [
                   {
@@ -2186,7 +2186,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": ".*Restrictions"
+                  "options": ".* limit"
                 },
                 "properties": [
                   {
@@ -2285,7 +2285,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "平均内存%(RSS)"
+                  "options": "Average memory% (RSS)"
                 },
                 "properties": [
                   {
@@ -2309,7 +2309,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "Overall audit use"
+                  "options": "Overall audit usage"
                 },
                 "properties": [
                   {
@@ -2369,7 +2369,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "Overall audit usage$|Total memory usage\\(WSS\\)$|Total Memory usage\\(RSS\\) $"
+                  "options": "[oO]verall audit usage$|[tT]otal memory usage \\(WSS\\)$|[tT]otal memory usage \\(RSS\\) $"
                 },
                 "properties": [
                   {
@@ -2434,7 +2434,7 @@
               "hide": false,
               "instant": true,
               "interval": "",
-              "legendFormat": "Overall audit use",
+              "legendFormat": "Overall audit usage",
               "refId": "L"
             },
             {
@@ -2480,7 +2480,7 @@
               "hide": false,
               "instant": true,
               "interval": "",
-              "legendFormat": "平均内存%(RSS)",
+              "legendFormat": "Average memory% (RSS)",
               "refId": "H"
             },
             {
@@ -2593,11 +2593,11 @@
                   "Value #E": "Total memory requirements",
                   "Value #F": "Total memory limit",
                   "Value #G": "Number of containers",
-                  "Value #H": "平均内存%(RSS)",
+                  "Value #H": "Average memory% (RSS)",
                   "Value #I": "Average memory% (WSS)",
                   "Value #J": "Total disk usage",
                   "Value #K": "Total memory usage (RSS) ",
-                  "Value #L": "Overall audit use",
+                  "Value #L": "Overall audit usage",
                   "container": "Container name",
                   "namespace": "Namespaces"
                 }
@@ -3047,7 +3047,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "CPU%(最大100%)"
+                  "options": "CPU% (maximum 100%)"
                 },
                 "properties": [
                   {
@@ -3107,7 +3107,7 @@
               {
                 "matcher": {
                   "id": "byName",
-                  "options": "CPU限制"
+                  "options": "CPU limit"
                 },
                 "properties": [
                   {
@@ -3283,7 +3283,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "内存.*|WSS$|RSS$"
+                  "options": "[mM]emory.*|WSS$|RSS$"
                 },
                 "properties": [
                   {
@@ -3295,7 +3295,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": ".*Restrictions"
+                  "options": ".* limit"
                 },
                 "properties": [
                   {
@@ -3326,7 +3326,7 @@
               {
                 "matcher": {
                   "id": "byRegexp",
-                  "options": "使用核数$|WSS$|RSS$"
+                  "options": "[nN]umber of cores used$|WSS$|RSS$"
                 },
                 "properties": [
                   {
@@ -3647,9 +3647,9 @@
                   "pod": 3
                 },
                 "renameByName": {
-                  "Value #A": "CPU%(最大100%)",
+                  "Value #A": "CPU% (maximum 100%)",
                   "Value #B": "CPU requirements",
-                  "Value #C": "CPU限制",
+                  "Value #C": "CPU limit",
                   "Value #D": "WSS",
                   "Value #E": "Memory requirements",
                   "Value #F": "Memory limit",
@@ -3679,10 +3679,10 @@
                     "node",
                     "Namespaces",
                     "Pod名称",
-                    "CPU%(最大100%)",
+                    "CPU% (maximum 100%)",
                     "Number of cores used",
                     "CPU requirements",
-                    "CPU限制",
+                    "CPU limit",
                     "WSS%",
                     "WSS",
                     "RSS%",
